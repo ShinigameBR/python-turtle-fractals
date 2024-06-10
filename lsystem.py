@@ -20,14 +20,14 @@ class LSystem:
         """
         return ''.join([self.rules.get(char, char) for char in axiom])
 
-    def generate(self, generations: int) -> str:
+    def generate(self, generation: int) -> str:
         """
         Gera a string resultante após um número especificado de gerações.
         
-        :param generations: O número de gerações a serem aplicadas.
+        :param generation: O número de gerações a serem aplicadas.
         :return: A string resultante após todas as gerações.
         """
         current_axiom = self.axiom
-        for _ in range(generations):
+        for _ in range(generation):
             current_axiom = self.apply_rules(current_axiom)
         return current_axiom
